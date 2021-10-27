@@ -1,0 +1,36 @@
+.header {
+  width: 93%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0.15;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.header__left {
+  display: flex;
+  flex-direction: row;
+  box-shadow: inset;
+}
+
+.user-icon {
+  width: 12%;
+  padding: 10px;
+  object-fit: contain;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:flex-start;
+}
+
+span{
+    font-size: 14px;
+}
+
+p{
+    font-size: 12px;
+
+}
