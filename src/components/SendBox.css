@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-#button {
+#record {
   background-image: linear-gradient(rgb(217, 67, 54), rgb(206, 53, 40));
   width: 40px;
   height: 40px;
@@ -20,7 +20,7 @@
   box-shadow:30px red;
 }
 
-.send-box > #button > p {
+.send-box > #record > p {
   font-size: 30px;
   text-align: center;
   color:white;
