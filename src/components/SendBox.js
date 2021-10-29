@@ -5,8 +5,7 @@ import { BsFillPlayFill } from 'react-icons/bs'
 import { RiDeleteBin5Line } from 'react-icons/ri' 
 import { FaStop } from 'react-icons/fa'
 
-//InvalidStateError: Failed to execute 'stop' on 'MediaRecorder': 
-//The MediaRecorder's state is 'inactive'.
+
 
 export default function SendBox(){
 	const [audio, setRecord] = useState('inactive');
@@ -21,21 +20,26 @@ export default function SendBox(){
 		  navigator.mediaDevices
 		 .getUserMedia({ audio: true })
 		.then((stream) => {
+			console.log('fan ', stream);
 			getRecord(stream);
 		 })
 	  .catch((err) => console.log("The following gUM error occured: " + err));
 	//   }
+	
 
 	//   getStream();
 
 	  function getRecord(stream) {
+		  console.log('as ', stream)
 		rec = new MediaRecorder(stream);
-		console.log('stream');
+		console.log('as1 ', rec.ondataavailable)
 		rec.ondataavailable = (e) => {
+			console.log("ondataavailable", e.data);
 			setAudioChunks(audioChunks.push(e.data));
 		  console.log("speech",e.data);
 		  if (rec.state == "inactive") {
-			const audioBlob = new Blob(audioChunks, { type: "video/webm;codecs=opus" });
+			const audioBlob = new Blob(audioChunks, { type: "audio/ogg; codecs=opus" });
+			console.log('test blob', audioBlob);
 			console.log('audioblob ', audioBlob);
 		//    appendEl('recordedAudio', audioBlob);
 		  }
@@ -48,11 +52,10 @@ export default function SendBox(){
 			rec.start();
 			setRecord('active');
 			console.log('rec state', rec.state);
-		  }else if (audio === 'active'){
-			console.log('record stop', audio);
-			console.log('rec stat2e', rec.state);
-			rec.stop();  
-			setRecord('inactive');
+		  }
+		  else{
+		  	setRecord('inactive');
+		  	// getRecord();
 		  }
 	  }
 
