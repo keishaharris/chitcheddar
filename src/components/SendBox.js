@@ -47,6 +47,7 @@ export default function SendBox(){
 	  }
 
 	  const handleRecord = (e) => {
+		  console.log('start', )
 		  if(audio == 'inactive'){
 			console.log('record start', e);
 			rec.start();
@@ -69,7 +70,9 @@ export default function SendBox(){
 			
 			{audio == 'inactive' ? <GiOldMicrophone size="1.5em" color="white"/> : <FaStop color="white"/>}
 			</div>
-
+			<div id="record" >
+			<FaStop color="white"/>
+			</div>
 			<BsFillPlayFill size="1em" color="gray"/>
 		</div>   
         )
