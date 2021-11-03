@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-#record {
+.recordButton {
   background-image: linear-gradient(rgb(217, 67, 54), rgb(206, 53, 40));
   width: 40px;
   height: 40px;

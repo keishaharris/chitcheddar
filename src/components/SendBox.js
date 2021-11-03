@@ -47,17 +47,17 @@ export default function SendBox(){
 	  }
 
 	  const handleRecord = (e) => {
-		  console.log('start', )
-		  if(audio == 'inactive'){
-			console.log('record start', e);
-			rec.start();
-			setRecord('active');
-			console.log('rec state', rec.state);
-		  }
-		  else{
-		  	setRecord('inactive');
-		  	// getRecord();
-		  }
+		  console.log('start', e)
+		//   if(audio == 'inactive'){
+		// 	console.log('record start', e);
+		// 	rec.start();
+		// 	setRecord('active');
+		// 	console.log('rec state', rec.state);
+		//   }
+		//   else{
+		//   	setRecord('inactive');
+		//   	// getRecord();
+		//   }
 	  }
 
     return (
@@ -66,11 +66,12 @@ export default function SendBox(){
 			<RiDeleteBin5Line size="1em" color="gray"/>
 
 			{/*Record/Send Button */}
-			<div id="record" onClick={handleRecord}>
+			<div id="recordStart" className="recordButton" onClick={handleRecord}>
 			
-			{audio == 'inactive' ? <GiOldMicrophone size="1.5em" color="white"/> : <FaStop color="white"/>}
+			<GiOldMicrophone size="1.5em" color="white"/> 
 			</div>
-			<div id="record" >
+			
+			<div id="recordstop" className="recordButton" onClick={(e) => handleRecord}>
 			<FaStop color="white"/>
 			</div>
 			<BsFillPlayFill size="1em" color="gray"/>
