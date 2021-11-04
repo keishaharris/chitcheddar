@@ -2,7 +2,7 @@ import React from 'react'
 import "./ChatBox.css"
 import Header from "./Header"
 import MessageArea from './MessageArea';
-import SendBox from './SendBox';
+import { SendBox } from './SendBox';
 
 
 function ChatBox() {
