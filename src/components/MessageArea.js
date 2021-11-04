@@ -8,7 +8,7 @@ export default function MessageArea(headline, sender, receiver) {
             <div id="headline">
                 Chat Conversation with receiver.
             </div>
-            <div className="messages">
+            <div className="messages" id="messages">
             </div>
         </div>
     )
